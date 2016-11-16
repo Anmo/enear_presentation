@@ -1,0 +1,31 @@
+button {
+	width: 100%;
+}
+
+.left-col pre {
+	position: relative;
+}
+
+.left-col pre code {
+	position: absolute;
+	padding: 2% 0 0 2%;
+	height: 98%;
+	width: 98%;
+	top: 0;
+}
+
+.left-col pre,
+pre code {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+pre code {
+	overflow-y: auto;
+}
+
+.right-col pre {
+	height: calc(100% - 72px);
+	margin: 0;
+}

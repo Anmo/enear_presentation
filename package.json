@@ -1,0 +1,37 @@
+{
+  "name": "enear_presentation",
+  "version": "1.0.0",
+  "description": "A simple presentation for my last day at E.near ;)",
+  "main": "server.js",
+  "scripts": {
+	"start": "npm run babel; node server.js",
+	"babel": "browserify js/preProcessedDemo.js -t babelify --outfile js/lastDemo.js",
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git+https://github.com/Anmo/enear_presentation.git"
+  },
+  "keywords": [
+	"Enear",
+	"Presentation",
+	"Promise",
+	"Generators",
+	"async/await"
+  ],
+  "author": "Anmo",
+  "license": "MIT",
+  "bugs": {
+	"url": "https://github.com/Anmo/enear_presentation/issues"
+  },
+  "homepage": "https://github.com/Anmo/enear_presentation#readme",
+  "dependencies": {
+	"babel-plugin-transform-runtime": "^6.15.0",
+	"babel-preset-latest": "^6.16.0",
+	"babel-runtime": "^6.18.0",
+	"babelify": "^7.3.0",
+	"browserify": "^13.1.1",
+	"express": "^4.14.0",
+	"socket.io": "^1.5.1"
+  }
+}
