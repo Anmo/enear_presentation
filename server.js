@@ -5,6 +5,8 @@ var demoJsonResolve = require.resolve('./constant/demos.json')
 var app = require('express')();
 var http = require('http').Server(app);
 
+var maxDemoIndex = require('./constant/demos.json').max_demo_index
+
 var path = require('path');
 
 var indexHTML = path.join(__dirname, 'index.html');
@@ -39,9 +41,8 @@ app.get('/demos.json', function(req, res) {
 app.get(/^\/(\d+)\/demo.js$/, function(req, res) {
 	var demoIdx = parseInt(req.params[0]);
 
-	delete require.cache[demoJsonResolve];
-	var scriptName = demoIdx >= require('./constant/demos.json').max_demo_index ? 'lastDemo' :
-																					'demo_' + demoIdx;
+	var scriptName = demoIdx >= maxDemoIndex ? 'lastDemo' :
+												'demo_' + demoIdx;
 
 	res.sendFile(path.join(__dirname, 'js/' + scriptName + '.js'));
 });
